@@ -1,0 +1,42 @@
+{
+  "name": "react-redux-app",
+  "version": "1.0.0",
+  "description": "React redux app",
+  "main": "index.js",
+  "author": "LACOUR Vincent",
+  "license": "MIT",
+  "scripts": {
+    "start": "webpack-dev-server --mode development",
+    "build": "webpack --mode production",
+    "lint": "eslint src/*.{js,jsx}",
+    "prettier": "prettier ./src/*.{js,jsx,json,html,css} ./src/index.html",
+    "format": "yarn run prettier -- --write",
+    "validate": "yarn run lint && yarn run prettier --list-different"
+  },
+  "dependencies": {
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-hot-loader": "4.3.11"
+  },
+  "devDependencies": {
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.1",
+    "webpack-dev-server": "^3.1.8",
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.2",
+    "css-loader": "^1.0.0",
+    "eslint": "^5.15.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "prettier": "^1.16.4",
+    "style-loader": "^0.23.0"
+  }
+}
