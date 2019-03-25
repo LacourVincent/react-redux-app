@@ -14,9 +14,6 @@
     "validate": "yarn run lint && yarn run prettier --list-different"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.2.5",
-    "@material-ui/core": "^3.9.2",
-    "@material-ui/icons": "^3.0.2",
     "react": "^16.8.3",
     "react-dom": "^16.8.3",
     "react-hot-loader": "4.3.11",
@@ -24,7 +21,10 @@
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
     "reselect": "^4.0.0",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "@babel/polyfill": "^7.2.5",
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
