@@ -2,15 +2,13 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  entry: ["whatwg-fetch", "@babel/polyfill", "./src/index.js"],
+  entry: ["whatwg-fetch", "./src/index.js"],
   mode: "development",
   module: {
     rules: [
       {
         test: /\.(js|jsx)$/,
-        exclude: /(node_modules|bower_components)/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/env"] }
+        loader: "babel-loader"
       },
       {
         test: /\.(s*)css$/,

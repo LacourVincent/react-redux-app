@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { createSelector } from "reselect";
 import { connect } from "react-redux";
-import { hot } from "react-hot-loader";
 
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -154,4 +153,4 @@ const selector = createSelector(
   })
 );
 
-export default hot(module)(connect(selector)(App));
+export default connect(selector)(App);
