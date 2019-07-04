@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react";
-import { createSelector } from "reselect";
+import { createStructuredSelector } from "reselect";
 import { connect } from "react-redux";
 
 import AppBar from "@material-ui/core/AppBar";
@@ -145,12 +145,9 @@ class App extends Component {
   }
 }
 
-const selector = createSelector(
-  [getUser, getRepositories],
-  (user, repositories) => ({
-    user,
-    repositories
-  })
-);
+const selector = createStructuredSelector({
+  user: getUser,
+  repositories: getRepositories
+});
 
 export default connect(selector)(App);
