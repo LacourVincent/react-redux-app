@@ -73,13 +73,10 @@ export default { [NAME]: reducer };
 ## Reselect
 
 ```javascript
-const selector = createSelector(
-  [getUser, getRepositories],
-  (user, repositories) => ({
-    user,
-    repositories
-  })
-);
+const selector = createStructuredSelector({
+  user : getUser,
+  repositories : getRepositories
+});
 ```
 
 ## Dependencies
