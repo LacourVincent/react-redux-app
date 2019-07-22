@@ -31,22 +31,28 @@ import "./app.scss";
 class App extends Component {
   state = {
     searchValue: "",
-    isLoading: false
+    isLoading: false,
+    isUserNotFound: false
   };
 
   handleInputChange = event => {
     this.setState({ searchValue: event.target.value });
   };
 
-  handleSubmit = async e => {
-    e.preventDefault();
+  handleSubmit = async event => {
+    event.preventDefault();
     const { searchValue } = this.state;
     if (!searchValue) return;
-    this.setState({ isLoading: true });
-    const [user, repositories] = await Promise.all([fetchUser(searchValue), fetchUserRepositories(searchValue)]);
-    store.dispatch(UserActionCreators.initUser(user));
-    store.dispatch(RepositoriesActionCreators.initRepositories(repositories));
-    this.setState({ isLoading: false, searchValue: "" });
+    this.setState({ isLoading: true, isUserNotFound : false });
+    try {
+      const [user, repositories] = await Promise.all([fetchUser(searchValue), fetchUserRepositories(searchValue)]);
+      store.dispatch(UserActionCreators.initUser(user));
+      store.dispatch(RepositoriesActionCreators.initRepositories(repositories));
+    } catch (_) {
+      this.setState({ isUserNotFound: true });
+    } finally {
+      this.setState({ isLoading: false, searchValue: "" });
+    }
   };
 
   renderHeader = () => {
@@ -62,7 +68,7 @@ class App extends Component {
   };
 
   renderSearchBar = () => {
-    const { searchValue } = this.state;
+    const { searchValue, isUserNotFound } = this.state;
     return (
       <Paper className="search" elevation={1}>
         <Typography variant="body1" />
@@ -78,6 +84,8 @@ class App extends Component {
                 </InputAdornment>
               )
             }}
+            error={isUserNotFound}
+            helperText= {isUserNotFound && "User not found"}
           />
           <Button className="search_form_button" variant="contained" color="secondary" onClick={this.handleSubmit}>
             OK
