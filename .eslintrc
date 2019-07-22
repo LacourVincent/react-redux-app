@@ -23,7 +23,16 @@
     "FormData": true,
     "FileReader": true,
     "Blob": true,
-    "navigator": true
+    "navigator": true,
+    "jest": true,
+    "test": true,
+    "expect": true,
+    "describe": true,
+    "it": true,
+    "beforeAll": true,
+    "beforeEach": true,
+    "afterAll": true,
+    "afterEach": true
   },
   "parser": "babel-eslint"
 }

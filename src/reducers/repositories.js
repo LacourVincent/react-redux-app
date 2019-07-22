@@ -1,14 +1,14 @@
-const NAME = "REPOSITORIES";
+export const NAME = "REPOSITORIES";
 
 export const Actions = {
   INIT_REPOSITORIES: `${NAME}/INIT_REPOSITORIES`
 };
 
-const initialState = {
+export const initialState = {
   repositories: []
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.INIT_REPOSITORIES:
       return { ...state, repositories: action.repositories };
@@ -33,7 +33,7 @@ export const RepositoriesActionCreators = {
  * Selectors
  */
 
-export const repositoriesSelector = state => state[NAME];
+const repositoriesSelector = state => state[NAME];
 
 export const getRepositories = state => repositoriesSelector(state).repositories;
 

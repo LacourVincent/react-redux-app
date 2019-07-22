@@ -1,14 +1,14 @@
-const NAME = "USER";
+export const NAME = "USER";
 
 export const Actions = {
   INIT_USER: `${NAME}/INIT_USER`
 };
 
-const initialState = {
+export const initialState = {
   user: null
 };
 
-const reducer = (state = initialState, action) => {
+export const reducer = (state = initialState, action) => {
   switch (action.type) {
     case Actions.INIT_USER:
       return { ...state, user: action.user };
@@ -33,7 +33,7 @@ export const UserActionCreators = {
  * Selectors
  */
 
-export const userSelector = state => state[NAME];
+const userSelector = state => state[NAME];
 
 export const getUser = state => userSelector(state).user;
 
