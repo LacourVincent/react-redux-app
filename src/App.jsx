@@ -43,7 +43,7 @@ class App extends Component {
     event.preventDefault();
     const { searchValue } = this.state;
     if (!searchValue) return;
-    this.setState({ isLoading: true, isUserNotFound : false });
+    this.setState({ isLoading: true, isUserNotFound: false });
     try {
       const [user, repositories] = await Promise.all([fetchUser(searchValue), fetchUserRepositories(searchValue)]);
       store.dispatch(UserActionCreators.initUser(user));
@@ -85,7 +85,7 @@ class App extends Component {
               )
             }}
             error={isUserNotFound}
-            helperText= {isUserNotFound && "User not found"}
+            helperText={isUserNotFound && "User not found"}
           />
           <Button className="search_form_button" variant="contained" color="secondary" onClick={this.handleSubmit}>
             OK
