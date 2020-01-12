@@ -70,21 +70,11 @@ export const getUser = state => userSelector(state).user;
 export default { [NAME]: reducer };
 ```
 
-## Reselect
-
-```javascript
-const selector = createStructuredSelector({
-  user : getUser,
-  repositories : getRepositories
-});
-```
-
 ## Dependencies
 
 - [React](https://github.com/facebook/react)
 - [Material-UI](https://github.com/mui-org/material-ui)
 - [Redux](https://github.com/reduxjs/redux)
-- [Reselect](https://github.com/reduxjs/reselect)
 
 ## LICENSE
 
