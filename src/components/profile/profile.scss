@@ -1,0 +1,18 @@
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  margin-top: 30px;
+  padding: 10px;
+
+  &_avatar {
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  &_information {
+    display: flex;
+    flex-direction: column;
+  }
+}

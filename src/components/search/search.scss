@@ -1,0 +1,12 @@
+.search {
+  padding: 15px;
+
+  &_form {
+    display: flex;
+
+    &_button {
+      align-self: center;
+      margin-left: 20px !important;
+    }
+  }
+}
